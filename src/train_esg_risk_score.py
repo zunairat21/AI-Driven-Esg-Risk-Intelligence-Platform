@@ -1,4 +1,4 @@
-# src/train_esg_risk_score.py
+# # ESG Risk Score regression training pipeline
 
 import joblib
 from sklearn.linear_model import LinearRegression
