@@ -19,7 +19,19 @@ This repository is intentionally developed **phase by phase** to reflect real-wo
 - Phase 3: Explainable AI using SHAP  
 - Phase 4: ESG news sentiment analysis using FinBERT  
 - Phase 5: RAG-based ESG question answering  
-- Phase 6: Streamlit application integration  
+- Phase 6: Streamlit application integration
+## Phase 1 – ESG Risk Score Regression (Baseline Completed)
+
+Phase 1 focuses on building a clean and reliable baseline model to predict ESG risk scores from structured ESG and financial data.
+
+**What was implemented:**
+- Modular data preprocessing using `Pipeline` and `ColumnTransformer`
+- Proper train-test split with prevention of data leakage
+- Baseline Linear Regression model
+- Model evaluation using MAE, RMSE, and R² metrics
+- Trained model and preprocessing pipeline saved for reuse
+
+This phase establishes a strong foundation for further model improvements and downstream ESG risk analysis.
 
 ## Tech Stack (Planned)
 - Python  
