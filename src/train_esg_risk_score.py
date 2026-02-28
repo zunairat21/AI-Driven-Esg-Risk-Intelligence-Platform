@@ -55,3 +55,36 @@ if __name__ == "__main__":
         data_path="data/company_esg_financial_dataset.csv",
         target_column="ESG_Risk_Score"
     )
+
+##-------Random Forest Regression------
+from sklearn.ensemble import RandomForestRegressor
+rf_model = RandomForestRegressor(
+    n_estimators=200,
+    random_state=42,
+    n_jobs=-1
+)
+rf_model.fit(X_train_processed, y_train)
+rf_pred=rf_model.predict(X_test_processed)
+
+rf_mae = mean_absolute_error(y_test, rf_pred)
+    rf_rmse = mean_squared_error(y_test, rf_pred, squared=False)
+    rf_r2 = r2_score(y_test, rf_pred)
+
+    print("\nRandom Forest Evaluation Metrics:")
+    print(f"MAE  : {rf_mae:.4f}")
+    print(f"RMSE : {rf_rmse:.4f}")
+    print(f"R²   : {rf_r2:.4f}")
+
+#---Model selection-----
+if rf_rmse < rmse:
+    best_model = rf_model
+    best_model_name = "RandomForestRegressor"
+else:
+    best_model = model
+    best_model_name = "LinearRegression"
+
+joblib.dump(best_model,"best_esg_risk_score_model.pkl")
+joblib.dump(preprocessor, "preprocessor.pkl")
+
+print(f"\nBest Model selected :{best_model_name}")
+
