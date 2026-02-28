@@ -33,6 +33,20 @@ Phase 1 focuses on building a clean and reliable baseline model to predict ESG r
 
 This phase establishes a strong foundation for further model improvements and downstream ESG risk analysis.
 
+
+## Phase 1.1 – Regression Model Improvement (Random Forest)
+
+To improve upon the baseline Linear Regression model, a Random Forest Regressor was introduced to capture non-linear relationships and feature interactions within ESG and financial data.
+
+**Enhancements introduced:**
+- Random Forest Regressor trained using the same preprocessing and train-test split
+- Fair model comparison using MAE, RMSE, and R² metrics
+- Automated selection of the best-performing model based on test RMSE
+- Best model persisted for downstream usage
+
+This enhancement demonstrates a systematic approach to model improvement while maintaining evaluation fairness and reproducibility.
+
+
 ## Tech Stack (Planned)
 - Python  
 - Pandas, NumPy, Scikit-learn  
