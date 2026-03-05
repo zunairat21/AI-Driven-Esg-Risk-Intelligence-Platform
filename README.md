@@ -46,6 +46,36 @@ To improve upon the baseline Linear Regression model, a Random Forest Regressor 
 
 This enhancement demonstrates a systematic approach to model improvement while maintaining evaluation fairness and reproducibility.
 
+## Phase 2 – ESG Risk Level Classification
+
+In Phase 2, the project extends beyond predicting a numerical ESG risk score by introducing a classification system that categorizes companies into interpretable ESG risk levels.
+
+To achieve this, the continuous ESG risk score was converted into categorical labels using defined thresholds:
+
+Low Risk
+
+Medium Risk
+
+High Risk
+
+This transformation enables easier interpretation for business stakeholders such as investors, analysts, and compliance teams.
+
+The classification pipeline reuses the existing preprocessing workflow developed in Phase 1 to maintain consistency and prevent duplicated data handling logic.
+
+A baseline multiclass classification model using Logistic Regression was trained and evaluated using accuracy and detailed classification metrics including precision, recall, and F1-score.
+
+This phase establishes a structured classification framework for ESG risk analysis.
+
+## Phase 2.1 – Model Improvement with Random Forest Classifier
+
+After establishing Logistic Regression as a baseline classifier, the model performance was further improved by introducing a Random Forest Classifier.
+
+Random Forest was selected because it can capture non-linear relationships and complex feature interactions that are common in ESG and financial datasets.
+
+Both models were trained using the same preprocessing pipeline and evaluated using consistent classification metrics to ensure a fair comparison.
+
+The system automatically selects and saves the best-performing model based on evaluation results, ensuring that the most effective classifier is used for downstream prediction tasks.
+
 
 ## Tech Stack (Planned)
 - Python  
