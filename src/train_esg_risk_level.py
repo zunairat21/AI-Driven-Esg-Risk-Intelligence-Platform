@@ -3,6 +3,7 @@ import joblib
 
 from sklearn.linear_model import LogisticRegression
 from  sklearn.metrics import classification_report ,accuracy_score
+from sklearn.ensemble import RandomForestClassifier
 
 from data_preprocessing import load_data, preprocess_data
 
@@ -77,10 +78,38 @@ def train_risk_level_model(data_path):
   print("\nClassification Report:")
   print(classification_report(y_test, y_pred)
 
+
+##________Random Forest Classifier____
+
+rf_model = RandomForestClassifier(
+  n_estimators=200,
+  andom_state = 42, 
+  n_jobs = -1
+)
+rf_model.fit(X_train_processed, y_train)
+rf_pred = rf_model.predict(X_test_processed)
+
+rf_accuracy = accuracy_score(y_test,rf_pred)
+
+print("\nRandom Forest Accuracy:", rf_accuracy)
+print("\nRandom Forest Classification Report:")
+print(classification_report(y_test, rf_pred))
+
   ##Save model 
   joblib.dump(model,"esg_risk_level_model.pkl")
   joblib.dump(preprocessor,"risk_level_preprocessor.pkl")
   print("\nModel saved successfully.")
+
+##___Model Selection Logic___
+if rf_accuracy > acc:
+  best_model = rf_model
+  best_model_name = "RandomForestClassifier"
+else:
+  best_model = model
+  best_model_name = "LogisticRegression"
+
+joblib.dump(best_model, "Best_esg_risk_level_model.pkl")
+print(f"\nBest model selected :{best_model}")
 
   if __name__ = "__main__":
     train_risk_level_model(
