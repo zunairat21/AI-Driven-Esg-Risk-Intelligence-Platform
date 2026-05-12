@@ -76,28 +76,27 @@ Both models were trained using the same preprocessing pipeline and evaluated usi
 
 The system automatically selects and saves the best-performing model based on evaluation results, ensuring that the most effective classifier is used for downstream prediction tasks.
 
-## Phase 3 – Explainable AI using SHAP
+## Phase 03 – SHAP Explainability
 
-In this phase, explainable AI techniques are introduced to improve transparency and interpretability of ESG risk predictions.
+In Phase 03, Explainable AI (XAI) was introduced using SHAP (SHapley Additive exPlanations) to improve transparency and interpretability of ESG risk predictions.
 
-The goal is to understand how individual features contribute to model predictions and provide stakeholders with trustworthy, interpretable insights.
+The SHAP module was integrated with the existing preprocessing and Random Forest pipeline to analyze how individual features contribute to ESG risk predictions.
 
-### What was implemented
+### Key Enhancements
 
-- Created a dedicated explainability module for scalable SHAP integration
-- Implemented a reusable `ShapExplainer` class
-- Added support for:
-  - Global feature importance explanations
-  - Local prediction-level explanations
-- Reused the existing preprocessing pipeline to ensure explanation consistency with model training
+- Global feature importance visualization
+- Pipeline-compatible SHAP integration
+- Transformed feature name extraction using `get_feature_names_out()`
+- Business-interpretable ESG feature analysis
+- Reusable modular explainability architecture
 
-### Objectives of this phase
+### SHAP Summary Plot
 
-- Improve model transparency
-- Support interpretable ESG decision-making
-- Prepare explainability integration for the Streamlit application
+![SHAP Summary Plot](assets/shap_summary_plot.png)
 
-This phase transforms the ESG prediction system into a more interpretable and trustworthy AI solution.
+### Insights
+
+The SHAP visualization demonstrates that ESG Environmental, ESG Governance, and ESG Social indicators are among the most influential contributors to ESG risk prediction.
 
 
 ## Tech Stack (Planned)
