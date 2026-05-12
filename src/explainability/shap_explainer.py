@@ -21,7 +21,6 @@ class ShapExplainer:
         Apply preprocessing pipeline
         """
         return self.preprocessor.transform(X)
-<<<<<<< HEAD
     
     def get_features_names(self):
         """
@@ -53,52 +52,7 @@ class ShapExplainer:
             X_transformed,
             feature_names = feature_names
             )
-
         
-=======
-
-    def build_explainer(self, X_transformed):
-        """
-        Create SHAP explainer (TreeExplainer for tree models)
-        """
-        self.explainer = shap.Explainer(self.model, X_transformed)
-        return self.explainer
-
-    def get_shap_values(self, X_transformed):
-        """
-        Compute SHAP values
-        """
-        if self.explainer is None:
-            raise ValueError("Explainer not built. Call build_explainer first.")
-        return self.explainer(X_transformed)
-
-    def plot_summary(self, shap_values, X_transformed):
-        """
-        Global feature importance
-        """
-        shap.summary_plot(shap_values, X_transformed)
-
-    def plot_force(self, shap_values, X_transformed, index=0):
-        """
-        Local explanation for a single prediction
-        """
-        shap.force_plot(
-            self.explainer.expected_value,
-            shap_values[index].values,
-            X_transformed[index]
-        )
-
-          
-  
-   
-
-
-
-                         
-
-  
-  
-    
-  
-
->>>>>>> 12a2ba96de2e51100dde7126d21e0eea61e8e6b4
+        import matplotlib.pyplot as plt
+        plt.savefig("assets/shap_summary_plot.png", bbox_inches="tight")
+        
