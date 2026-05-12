@@ -50,9 +50,11 @@ class ShapExplainer:
         shap.summary_plot(
             shap_values, 
             X_transformed,
-            feature_names = feature_names
+            feature_names = feature_names,
+            show=False
             )
         
         import matplotlib.pyplot as plt
         plt.savefig("assets/shap_summary_plot.png", bbox_inches="tight")
+        plt.close()
         
