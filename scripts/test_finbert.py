@@ -11,10 +11,8 @@ analyzer = FinBERTSentimentAnalyzer()
 
 #Example ESG_related text
 
-sample_text = """
-Tesla reported strong quarterly revenue growth
-with increasing investor confidence.
-"""
+sample_text = """The company released its annual sustainability report."""
+
 
 #Predict sentiment
 result = analyzer.predict_sentiment(sample_text)

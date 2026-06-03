@@ -25,9 +25,9 @@ class FinBERTSentimentAnalyzer:
 
         # Sentiment labels
         self.labels = {
-            0: "negative",
-            1: "neutral",
-            2: "positive"
+            0: "positive",
+            1: "negative",
+            2: "neutral"
         }
 
     def predict_sentiment(self, text):
@@ -44,7 +44,7 @@ class FinBERTSentimentAnalyzer:
         with torch.no_grad():
 
             outputs = self.model(**inputs)
-
+        
         # Convert logits → probabilities
         probabilities = F.softmax(
             outputs.logits,

@@ -9,7 +9,7 @@ sys.path.append(
 import pandas as pd 
 from src.nlp.finbert_sentiment import(FinBERTSentimentAnalyzer)
 
-# Initialize FinBERT analyzer
+# Initialize FinBERT analyzerpython3
 analyzer = FinBERTSentimentAnalyzer()
 
 
