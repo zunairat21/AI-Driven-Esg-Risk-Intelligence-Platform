@@ -98,6 +98,90 @@ The SHAP module was integrated with the existing preprocessing and Random Forest
 
 The SHAP visualization demonstrates that ESG Environmental, ESG Governance, and ESG Social indicators are among the most influential contributors to ESG risk prediction.
 
+## Phase 04 – NLP Sentiment Intelligence
+
+### Objective
+
+Enhance ESG risk analysis by incorporating sentiment intelligence from unstructured ESG-related news articles using transformer-based NLP techniques.
+
+### Key Technologies
+FinBERT (ProsusAI/finbert)
+Hugging Face Transformers
+PyTorch
+Pandas
+ESG News Dataset
+
+### Implementation Overview
+### FinBERT Sentiment Analysis
+
+Implemented a transformer-based sentiment analysis pipeline using FinBERT, a domain-specific language model pre-trained on financial text. The model analyzes ESG and financial news articles and generates:
+
+Sentiment Label (Positive, Negative, Neutral)
+Confidence Score
+
+Example Output:
+
+{
+    "sentiment": "positive",
+    "confidence": 0.9542
+}
+### Batch Sentiment Scoring Pipeline
+
+Developed a batch processing workflow capable of scoring sentiment across large ESG news datasets. The pipeline:
+
+1. Loads ESG news headlines.
+2. Applies FinBERT inference.
+3. Generates sentiment predictions.
+4. Stores confidence scores.
+5. Creates sentiment-enriched ESG datasets for downstream analysis.
+   
+
+### Validation & Debugging
+
+A comprehensive validation process was conducted to ensure prediction reliability.
+
+During testing, positive financial news was incorrectly displayed as negative sentiment. Investigation revealed that the issue originated from an incorrect manual label mapping rather than the FinBERT model itself.
+
+### Debugging Process:
+
+Verified input text processing.
+Examined model logits.
+Inspected official FinBERT label configuration.
+Identified label mapping mismatch.
+Corrected sentiment interpretation layer.
+
+Official FinBERT Label Mapping:
+
+{
+    0: "positive",
+    1: "negative",
+    2: "neutral"
+}
+
+After correction, sentiment predictions aligned with financial context and expected model behavior.
+
+### Outcomes
+
+✅ Transformer-based ESG sentiment analysis
+
+✅ FinBERT integration using Hugging Face Transformers
+
+✅ PyTorch inference pipeline
+
+✅ Confidence score generation
+
+✅ Batch sentiment scoring workflow
+
+✅ Sentiment-enriched ESG news dataset creation
+
+✅ Model validation and debugging
+
+✅ Modular NLP architecture for future RAG integration
+
+### Business Value
+
+The sentiment intelligence layer enables the platform to analyze unstructured ESG news alongside structured ESG metrics, providing richer insights for investors, analysts, and decision-makers. This creates a stronger foundation for future Retrieval-Augmented Generation (RAG) and ESG question-answering capabilities.
+
 
 ## Tech Stack (Planned)
 - Python  
