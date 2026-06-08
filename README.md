@@ -98,7 +98,7 @@ The SHAP module was integrated with the existing preprocessing and Random Forest
 
 The SHAP visualization demonstrates that ESG Environmental, ESG Governance, and ESG Social indicators are among the most influential contributors to ESG risk prediction.
 
-## Phase 04 – NLP Sentiment Intelligence
+## Phase 04 – Fianancial NLP Sentiment Intelligence
 
 ### Objective
 
