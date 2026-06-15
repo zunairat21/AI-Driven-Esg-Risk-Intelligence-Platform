@@ -3,4 +3,8 @@ numpy
 scikit-learn
 joblib
 SHAP
+sentence-transformers
+chromadb
+transformers
+torch
 
