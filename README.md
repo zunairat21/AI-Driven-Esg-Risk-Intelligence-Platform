@@ -182,6 +182,69 @@ After correction, sentiment predictions aligned with financial context and expec
 
 The sentiment intelligence layer enables the platform to analyze unstructured ESG news alongside structured ESG metrics, providing richer insights for investors, analysts, and decision-makers. This creates a stronger foundation for future Retrieval-Augmented Generation (RAG) and ESG question-answering capabilities.
 
+### Phase 05: ESG RAG (Retrieval-Augmented Generation) Question Answering System
+
+## Objective
+
+To enable intelligent ESG-related question answering by retrieving relevant ESG news articles and generating context-aware responses using a Large Language Model (LLM).
+
+## Key Features
+Semantic document retrieval using Sentence Transformers embeddings.
+Vector database integration using ChromaDB.
+Retrieval of ESG-related news articles based on user queries.
+Context construction from retrieved ESG documents.
+Answer generation using Google's FLAN-T5 Base model.
+Grounded responses based on retrieved ESG evidence to reduce hallucinations.
+
+## RAG Architecture
+
+User Question
+
+↓
+
+Sentence Transformer (all-MiniLM-L6-v2)
+
+↓
+
+ChromaDB Similarity Search
+
+↓
+
+Top Relevant ESG Articles Retrieved
+
+↓
+
+Context Construction
+
+↓
+
+FLAN-T5 Base
+
+↓
+
+Generated ESG Answer
+
+## Technologies Used
+
+Python
+Sentence Transformers
+ChromaDB
+Hugging Face Transformers
+FLAN-T5 Base
+Pandas
+
+## Example Query
+
+## Question:
+Why was Tesla removed from the ESG index?
+
+## Generated Answer:
+The retrieved ESG articles indicate that Tesla's removal from the ESG index sparked debate among investors regarding ESG evaluation criteria. The documents discuss concerns related to ESG rating methodologies, sustainability interpretations, governance considerations, and broader ESG assessment practices.
+
+Outcome
+
+Successfully implemented an end-to-end Retrieval-Augmented Generation (RAG) pipeline capable of retrieving ESG-related information from a news corpus and generating context-aware answers using an LLM.
+
 
 ## Tech Stack (Planned)
 - Python  
